@@ -1,3 +1,5 @@
+![image](https://github.com/Akbal-21/prueba_de_Porth/assets/69124578/ae7dd04d-53eb-4602-b7d9-3b8f2bdf699c)
+
 # prueba_tecnica
 
 Esto es una prueba tecnica donde se puede observar los iconos de fontawesome free
