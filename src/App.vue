@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
+// @ts-ignore
 import IconRender from "./components/IconRender.vue";
 import type { IconsArray } from "./interface";
 import { icos_font } from "./ts";
