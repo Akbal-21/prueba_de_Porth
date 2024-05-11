@@ -46,6 +46,10 @@ const nextPage = () => {
 };
 
 
+const setCurrentPage = (page: number) => {
+  currentPage.value = page;
+};
+
 
 </script>
 
@@ -54,10 +58,10 @@ const nextPage = () => {
   <h2 class="text-center text-5xl italic">Iconos de <span class="underline">fotn awesome</span></h2>
     <div class="m-4">
       <input type="text" placeholder="Busque un icono" v-model="search"
-        class="rounded-md w-full h-11 border-blue-500 text-lg" />
+        class="rounded-lg w-full h-11 border-blue-500 text-lg" />
     </div>
-    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 ">
-      <div v-for="(icon, index) in paginatedIcons" :key="index" class="items-center p-3 border-gray-600 bg-slate-300">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 animate-fade-up  ">
+      <div v-for="(icon, index) in paginatedIcons" :key="index" class="items-center p-3 bg-slate-400 rounded-2xl ">
         <IconRender :name="icon.nombre" :icon="icon.svg"></IconRender>
       </div>
     </div>
@@ -68,6 +72,12 @@ const nextPage = () => {
     :disabled="currentPage === 1" 
     class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
     >Anterior</button>
+    <span v-for="(page) in totalPages" class=" m-2">
+    <button :class="{ 'current-page': page === currentPage } " @click="setCurrentPage(page)">
+    {{ page }}
+    </button>
+
+    </span>
     <button 
     @click="nextPage" 
     v-show="currentPage != totalPages"
@@ -79,4 +89,11 @@ const nextPage = () => {
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.current-page {
+  background-color: #303030f8;
+  color: #d1d1d1;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer; /* Cambia el cursor al puntero para indicar que es interactivo */
+}</style>
