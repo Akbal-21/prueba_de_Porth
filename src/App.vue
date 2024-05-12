@@ -55,7 +55,7 @@ const setCurrentPage = (page: number) => {
 
 <template>
   <div class="m-3">
-  <h2 class="text-center text-5xl italic">Iconos de <span class="underline">fotn awesome</span></h2>
+  <h2 class="text-center text-5xl italic">Iconos de <span class="underline">font awesome</span></h2>
     <div class="m-4">
       <input type="text" placeholder="Busque un icono" v-model="search"
         class="rounded-lg w-full h-11 border-blue-500 text-lg" />
